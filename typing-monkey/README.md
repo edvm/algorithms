@@ -9,6 +9,6 @@ Here goes my implementation!
 ```python
 
 >>> import monkey
->>> monkey.score('python', repeat=10000)
+>>> monkey.generate('python', repeat=10000)
 ('ykthon', 4)
 ```

@@ -28,24 +28,24 @@ def get_similarity_vector(string1: str, string2: str) -> list:
     return vector
 
 
-def generate(length: int) -> str:
-    """Returns a random string of given length."""
+def get_text(length: int) -> str:
+    """Returns a text of given length."""
     text = ""
     while len(text) < length:
         text += get_random_char(letters)
     return text
 
 
-def score(phrase: str, repeat: int = 1000) -> tuple:
+def generate(phrase: str, repeat: int = 1000) -> tuple:
     """Returns a tuple like: ('random text', score) """
     best_phrase = ""
     best_score = 0
 
     while repeat > 0:
-        random_text = generate(len(phrase))
+        random_text = get_text(len(phrase))
         vector = get_similarity_vector(phrase, random_text)
         new_score = vector.count(1)
-        if new_score >= best_score:
+        if new_score > best_score:
             best_score = new_score
             best_phrase = random_text
         repeat -= 1
