@@ -8,7 +8,7 @@ Here goes my implementation!
 
 ```python
 
-In [7]: monkey.start_typing('hola', 1000000)                                                                             
+In [7]: monkey.start_typing('hola', 1000000)
 Best match: hola
 Score: 4
 Time elapsed: 6.30 seconds
