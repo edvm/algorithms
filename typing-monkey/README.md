@@ -6,6 +6,9 @@ Here goes my implementation!
 
 ## Usage
 
+```python
+
 >>> import monkey
 >>> monkey.score('python', repeat=10000)
 ('ykthon', 4)
+```
