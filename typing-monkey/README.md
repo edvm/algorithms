@@ -8,7 +8,7 @@ Here goes my implementation!
 
 ```python
 
-In [4]: monkey.start_typing('hola', 100000)                                                                              
+In [4]: monkey.start_typing('hola', 100000)
 Best match: hola
 Iterations: 15092
 Used 15.09 percent of given iterations
