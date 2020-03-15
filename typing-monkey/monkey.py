@@ -58,11 +58,16 @@ def generate(phrase: str, repeat: int = 1000) -> tuple:
 
 def start_typing(phrase: str, repeat: int = 1000) -> tuple:
     """Tell your monkey to start typing!."""
+    assert repeat > 0, "repeat argument cannot be zero"
+
     t1 = time.time()
     best_phrase, best_score, n_iterations = generate(phrase, repeat)
     t2 = time.time()
+    total_iterations = repeat - n_iterations
+    total_iterations_used_percent = 100 - (n_iterations * 100 / repeat)
 
     print(f"Best match: {best_phrase}")
-    print(f"Iterations: {repeat - n_iterations}")
+    print(f"Iterations: {total_iterations}")
+    print("Used %.2f percent of given iterations" % total_iterations_used_percent)
     print(f"Score: {best_score}")
     print("Time elapsed: %.3f seconds" % (t2 - t1))
