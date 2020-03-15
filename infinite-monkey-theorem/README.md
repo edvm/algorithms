@@ -21,5 +21,5 @@ OR
 ```python
 >>> import monkey
 >>> monkey.generate('python', repeat=10000)
-('ykthon', 4)
+('ykthon', 4, 15082)
 ```
