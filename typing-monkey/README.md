@@ -8,10 +8,12 @@ Here goes my implementation!
 
 ```python
 
-In [7]: monkey.start_typing('hola', 1000000)
+In [4]: monkey.start_typing('hola', 100000)                                                                              
 Best match: hola
+Iterations: 15092
+Used 15.09 percent of given iterations
 Score: 4
-Time elapsed: 6.30 seconds
+Time elapsed: 0.105 seconds
 ```
 
 OR 
