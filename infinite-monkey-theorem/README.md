@@ -9,28 +9,30 @@ Here goes my implementation!
 ## Usage
 
 ```python
+In [1]: import monkey                                                                                                                                                                                                                          
 
-In [4]: monkey.start_typing('hola', 100000)
-Best match: hola
-Iterations: 15092
-Used 15.09 percent of given iterations
-Score: 4
-Time elapsed: 0.105 seconds
+In [2]: monkey.start_typing('python', 1000)                                                                                                                                                                                                    
+Original phrase is: python
+Monkey generated this one: yjxhwn
+Score: 33.33%
+Iterations: 1000
+Used 100.00% of given iterations
+Time elapsed: 0.010 seconds
 ```
 
-OR make your monkey more smart using an optimization of the above algorithm. Just use it like: 
+OR make your monkey more smart using an optimization of the above algorithm. Just pass `use_opt1` argument like: 
 
 ```python
-
-In [10]: monkey.start_typing('python', 1000, use_opt1=True)                                            
-Best match: python
-Iterations: 85
-Used 8.50 percent of given iterations
-Score: 6
-Time elapsed: 0.001 seconds
+In [3]: monkey.start_typing('python', 1000, use_opt1=True)                                                                                                                                                                                     
+Original phrase is: python
+Monkey generated this one: python
+Score: 100.00%
+Iterations: 48
+Used 4.80% of given iterations
+Time elapsed: 0.000 seconds
 ```
 
-OR Just call generate
+OR just call generate
 
 ```python
 >>> import monkey
