@@ -29,6 +29,7 @@ def get_similarity_vector(string1: str, string2: str) -> list:
 
 
 def get_index_positions_of(n: int, iterable: list) -> list:
+    """Returns a list of integer positions."""
     positions = []
     to_iter = iterable.copy()
     n_toggled = -1 if n == 0 else n * -1
