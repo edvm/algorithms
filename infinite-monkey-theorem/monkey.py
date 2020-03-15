@@ -28,8 +28,23 @@ def get_similarity_vector(string1: str, string2: str) -> list:
     return vector
 
 
+def get_index_positions_of(n: int, iterable: list) -> list:
+    positions = []
+    to_iter = iterable.copy()
+    while n in to_iter:
+        position = to_iter.index(n)
+        positions.append(position)
+        to_iter[position] = -1 if n == 0 else n * -1  # toggle given value
+    return positions
+
+
+def get_index_positions_to_improve(string1: str, string2) -> list:
+    vector = get_similarity_vector(string1, string2)
+    positions = get_index_positions_of(0, vector)
+    return positions
+
+
 def get_random_text(length: int) -> str:
-    """Returns a text of given length."""
     text = ""
     while len(text) < length:
         text += get_random_char(letters)
@@ -70,3 +85,9 @@ def start_typing(phrase: str, repeat: int = 1000) -> tuple:
     print("Used %.2f percent of given iterations" % total_iterations_used_percent)
     print(f"Score: {best_score}")
     print("Time elapsed: %.3f seconds" % (t2 - t1))
+
+
+if __name__ == "__main__":
+    import doctest
+
+    doctest.testmod()
