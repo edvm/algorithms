@@ -40,6 +40,16 @@ def get_index_positions_of(n: int, iterable: list) -> list:
 
 
 def get_index_positions_to_guess(string1: str, string2) -> list:
+    """Returns a list of integer positions.
+
+    Each element of the returned list meants that `string1` and `string2`
+    are different at that given `element value`/position.
+
+    For ex:
+
+    >>> get_index_positions_to_guess("qwee", "qwer")
+    [3]
+    """
     vector = get_similarity_vector(string1, string2)
     positions = get_index_positions_of(0, vector)
     return positions
