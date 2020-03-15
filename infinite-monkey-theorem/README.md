@@ -18,10 +18,29 @@ Score: 4
 Time elapsed: 0.105 seconds
 ```
 
-OR 
+OR make your monkey more smart using an optimization of the above algorithm. Just use it like: 
+
+```python
+
+In [10]: monkey.start_typing('python', 1000, use_opt1=True)                                            
+Best match: python
+Iterations: 85
+Used 8.50 percent of given iterations
+Score: 6
+Time elapsed: 0.001 seconds
+```
+
+OR Just call generate
 
 ```python
 >>> import monkey
 >>> monkey.generate('python', repeat=10000)
 ('ykthon', 4, 15082)
+```
+
+OR just call a smarter generate
+
+```python
+>>> monkey.generate('python', 1000, use_opt1=True)
+>>> ('python', 6, 899)
 ```
