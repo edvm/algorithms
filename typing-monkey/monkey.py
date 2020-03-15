@@ -38,28 +38,31 @@ def get_random_text(length: int) -> str:
 
 
 def generate(phrase: str, repeat: int = 1000) -> tuple:
-    """Returns a tuple like: ('random text', score) """
+    """Returns a tuple like: ('random text', score, n_iterations) """
     best_phrase = ""
     best_score = 0
 
-    while repeat >= 0:
+    while repeat > 0:
+        repeat -= 1
         random_text = get_random_text(len(phrase))
         vector = get_similarity_vector(phrase, random_text)
         new_score = vector.count(1)
         if new_score > best_score:
             best_score = new_score
             best_phrase = random_text
-        repeat -= 1
+        if best_score == len(phrase):
+            break
 
-    return (best_phrase, best_score)
+    return (best_phrase, best_score, repeat)
 
 
 def start_typing(phrase: str, repeat: int = 1000) -> tuple:
     """Tell your monkey to start typing!."""
-
     t1 = time.time()
-    best_phrase, best_score = generate(phrase, repeat)
+    best_phrase, best_score, n_iterations = generate(phrase, repeat)
     t2 = time.time()
+
     print(f"Best match: {best_phrase}")
+    print(f"Iterations: {repeat - n_iterations}")
     print(f"Score: {best_score}")
-    print("Time elapsed: %.2f seconds" % (t2 - t1))
+    print("Time elapsed: %.3f seconds" % (t2 - t1))
