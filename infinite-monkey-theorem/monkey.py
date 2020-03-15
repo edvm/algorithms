@@ -63,14 +63,27 @@ def get_random_text(length: int) -> str:
     return text
 
 
-def generate(phrase: str, repeat: int = 1000) -> tuple:
+def patch_best_phrase(best_phrase: str, phrase: str) -> str:
+    diff_idxs = get_index_positions_to_guess(best_phrase, phrase)
+    best_phrase = list(best_phrase)
+    for idx in diff_idxs:
+        best_phrase[idx] = get_random_char(letters)
+    return "".join((ch for ch in best_phrase))
+
+
+def generate(phrase: str, repeat: int = 1000, use_opt1: bool = False) -> tuple:
     """Returns a tuple like: ('random text', score, n_iterations) """
     best_phrase = ""
     best_score = 0
 
     while repeat > 0:
         repeat -= 1
-        random_text = get_random_text(len(phrase))
+
+        if use_opt1 and best_score > 0:
+            random_text = patch_best_phrase(best_phrase, phrase)
+        else:
+            random_text = get_random_text(len(phrase))
+
         vector = get_similarity_vector(phrase, random_text)
         new_score = vector.count(1)
         if new_score > best_score:
@@ -82,12 +95,12 @@ def generate(phrase: str, repeat: int = 1000) -> tuple:
     return (best_phrase, best_score, repeat)
 
 
-def start_typing(phrase: str, repeat: int = 1000) -> tuple:
+def start_typing(phrase: str, repeat: int = 1000, use_opt1: bool = False) -> tuple:
     """Tell your monkey to start typing!."""
     assert repeat > 0, "repeat argument cannot be zero"
 
     t1 = time.time()
-    best_phrase, best_score, n_iterations = generate(phrase, repeat)
+    best_phrase, best_score, n_iterations = generate(phrase, repeat, use_opt1)
     t2 = time.time()
     total_iterations = repeat - n_iterations
     total_iterations_used_percent = 100 - (n_iterations * 100 / repeat)
