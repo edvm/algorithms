@@ -3,7 +3,6 @@ import string
 import random
 
 letters = string.ascii_lowercase + " "
-sheakespeare_phrase = "methinks it is like a weasel"
 
 
 def get_random_char(letters: str) -> str:
