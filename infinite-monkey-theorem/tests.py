@@ -27,6 +27,12 @@ class TestMonkey(unittest.TestCase):
         self.assertEqual([], monkey.get_index_positions_of(0, array))
         self.assertEqual([], monkey.get_index_positions_of(-1, array))
 
+    def test_get_index_positions_to_guess(self):
+        self.assertEqual([3], monkey.get_index_positions_to_guess("qwee", "qwer"))
+        self.assertEqual([0, 3], monkey.get_index_positions_to_guess(" wee", "qwer"))
+        self.assertEqual([0, 2, 3], monkey.get_index_positions_to_guess(" w3e", "qwer"))
+        self.assertEqual([], monkey.get_index_positions_to_guess("", ""))
+
 
 if __name__ == "__main__":
     unittest.main()

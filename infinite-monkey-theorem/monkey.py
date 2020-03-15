@@ -31,14 +31,15 @@ def get_similarity_vector(string1: str, string2: str) -> list:
 def get_index_positions_of(n: int, iterable: list) -> list:
     positions = []
     to_iter = iterable.copy()
+    n_toggled = -1 if n == 0 else n * -1
     while n in to_iter:
         position = to_iter.index(n)
         positions.append(position)
-        to_iter[position] = -1 if n == 0 else n * -1  # toggle given value
+        to_iter[position] = n_toggled
     return positions
 
 
-def get_index_positions_to_improve(string1: str, string2) -> list:
+def get_index_positions_to_guess(string1: str, string2) -> list:
     vector = get_similarity_vector(string1, string2)
     positions = get_index_positions_of(0, vector)
     return positions
