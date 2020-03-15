@@ -104,12 +104,14 @@ def start_typing(phrase: str, repeat: int = 1000, use_opt1: bool = False) -> tup
     t2 = time.time()
     total_iterations = repeat - n_iterations
     total_iterations_used_percent = 100 - (n_iterations * 100 / repeat)
+    final_score = best_score * 100 / len(phrase)
 
-    print(f"Best match: {best_phrase}")
+    print(f"Original phrase is: {phrase}")
+    print(f"Monkey generated this one: {best_phrase}")
+    print(f"Score: {final_score:.2f}%")
     print(f"Iterations: {total_iterations}")
-    print("Used %.2f percent of given iterations" % total_iterations_used_percent)
-    print(f"Score: {best_score}")
-    print("Time elapsed: %.3f seconds" % (t2 - t1))
+    print(f"Used {total_iterations_used_percent:.2f}% of given iterations")
+    print(f"Time elapsed: {(t2 - t1):.3f} seconds")
 
 
 if __name__ == "__main__":
