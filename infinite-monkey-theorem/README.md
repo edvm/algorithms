@@ -4,7 +4,7 @@ The infinite monkey theorem states that a monkey hitting keys at random on a typ
 
 ![Monkey typing](https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Chimpanzee_seated_at_typewriter.jpg/220px-Chimpanzee_seated_at_typewriter.jpg)
 
-Here goes my implementation!
+Here goes my implementation! (Use Python >= 3.8)
 
 ## Usage
 
