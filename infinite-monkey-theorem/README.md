@@ -9,9 +9,9 @@ Here goes my implementation!
 ## Usage
 
 ```python
-In [1]: import monkey                                                                                                                                                                                                                          
+In [1]: import monkey
 
-In [2]: monkey.start_typing('python', 1000)                                                                                                                                                                                                    
+In [2]: monkey.start_typing('python', repeat=1000)
 Original phrase is: python
 Monkey generated this one: yjxhwn
 Score: 33.33%
@@ -23,7 +23,7 @@ Time elapsed: 0.010 seconds
 OR make your monkey more smart using an optimization of the above algorithm. Just pass `use_opt1` argument like: 
 
 ```python
-In [3]: monkey.start_typing('python', 1000, use_opt1=True)                                                                                                                                                                                     
+In [3]: monkey.start_typing('python', repeat=1000, use_opt1=True)
 Original phrase is: python
 Monkey generated this one: python
 Score: 100.00%
@@ -43,6 +43,6 @@ OR just call generate
 OR just call a smarter generate
 
 ```python
->>> monkey.generate('python', 1000, use_opt1=True)
+>>> monkey.generate('python', repeat=1000, use_opt1=True)
 >>> ('python', 6, 899)
 ```

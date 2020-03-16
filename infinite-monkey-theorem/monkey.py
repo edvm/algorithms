@@ -71,7 +71,7 @@ def patch_best_phrase(best_phrase: str, phrase: str) -> str:
     return "".join((ch for ch in best_phrase))
 
 
-def generate(phrase: str, repeat: int = 1000, use_opt1: bool = False) -> tuple:
+def generate(phrase: str, /, *, repeat: int = 1000, use_opt1: bool = False) -> tuple:
     """Returns a tuple like: ('random text', score, n_iterations) """
     best_phrase = ""
     best_score = 0
@@ -95,7 +95,9 @@ def generate(phrase: str, repeat: int = 1000, use_opt1: bool = False) -> tuple:
     return (best_phrase, best_score, repeat)
 
 
-def start_typing(phrase: str, repeat: int = 1000, use_opt1: bool = False) -> tuple:
+def start_typing(
+    phrase: str, /, *, repeat: int = 1000, use_opt1: bool = False
+) -> tuple:
     """Tell your monkey to start typing!."""
     assert repeat > 0, "repeat argument cannot be zero"
 
