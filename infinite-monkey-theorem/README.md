@@ -20,7 +20,7 @@ Used 100.00% of given iterations
 Time elapsed: 0.010 seconds
 ```
 
-OR make your monkey more smart using an optimization of the above algorithm. Just pass `use_opt1` argument like: 
+OR make your monkey smarter using an optimization of the above algorithm. Just pass `use_opt1` argument like: 
 
 ```python
 In [3]: monkey.start_typing('python', repeat=1000, use_opt1=True)
