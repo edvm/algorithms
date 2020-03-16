@@ -102,7 +102,7 @@ def start_typing(
     assert repeat > 0, "repeat argument cannot be zero"
 
     t1 = time.time()
-    best_phrase, best_score, n_iterations = generate(phrase, repeat=repeat, use_opt1=True)
+    best_phrase, best_score, n_iterations = generate(phrase, repeat=repeat, use_opt1=use_opt1)
     t2 = time.time()
     total_iterations = repeat - n_iterations
     total_iterations_used_percent = 100 - (n_iterations * 100 / repeat)
